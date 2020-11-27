@@ -15,7 +15,7 @@ class modified_mmsr(mmsr):
             secrecy=user_rate-eavesdropper_rate
             self.secrecy_rate[i]= -1*secrecy
 
-        return torch.max(self.secrecy_rate)    
+        return torch.max(self.secrecy_rate)    # changed the original obj fn to output a vector so that we can use the gradient feature of pytorch
 
 no_users=10
 ob=modified_mmsr(no_users)
